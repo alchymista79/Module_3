@@ -1,0 +1,22 @@
+Index: Черновик.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Домашняя работа по уроку \"Пространство имён\"\r\n\r\n# Задача \"Счётчик вызовов\":\r\n# Порой необходимо отслеживать, сколько раз вызывалась та или иная функция. К сожалению, в Python не предусмотрен\r\n# подсчёт вызовов автоматически.\r\n# Давайте реализуем данную фишку самостоятельно!\r\n#\r\n# Вам необходимо написать 3 функции:\r\n# Функция count_calls подсчитывающая вызовы остальных функций.\r\n# Функция string_info принимает аргумент - строку и возвращает кортеж из: длины этой строки, строку в верхнем регистре,\r\n# строку в нижнем регистре.\r\n# Функция is_contains принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке,\r\n# False - если отсутствует. Регистром строки при проверке пренебречь: UrbaN ~ URBAN.\r\n# Пункты задачи:\r\n# 1. Создать переменную calls = 0 вне функций.\r\n# 2. Создать функцию count_calls и изменять в ней значение переменной calls. Эта функция должна вызываться в остальных\r\n# двух функциях.\r\n# 3. Создать функцию string_info с параметром string и реализовать логику работы по описанию.\r\n# 4. Создать функцию is_contains с двумя параметрами string и list_to_search, реализовать логику работы по описанию.\r\n# 5. Вызвать соответствующие функции string_info и is_contains произвольное кол-во раз с произвольными данными.\r\n# 6. Вывести значение переменной calls на экран(в консоль).\r\n\r\n# Примечания:\r\n# Для использования глобальной переменной внутри функции используйте оператор global.\r\n# Для функции is_contains лучше привести и искомую строку и все строки в списке в один регистр.\r\n\r\n# ~_Р_Е_Ш_Е_Н_И_Е_~\r\ncalls = 0   # 1\r\ndef count_calls():  #2\r\n    global calls\r\n    calls += 1\r\n\r\ndef string_info(string):    #3\r\n    stroka = str(string)\r\n    result = (len(stroka), stroka.upper(), stroka.lower())\r\n    count_calls()\r\n    return result\r\n\r\ndef is_contains(string, list_to_search):    # 4\r\n    string = str(string).lower()\r\n    list_to_search = list(list_to_search)\r\n    count_calls()\r\n    for i in range(len(list_to_search)):\r\n        if str(list_to_search[i]).lower() == string:\r\n            result = True\r\n            break\r\n        else:\r\n            result = False\r\n            continue\r\n    return result\r\n\r\nprint(string_info('Kalinka'))\r\nprint(string_info('Cavaleria'))\r\nprint(is_contains('cube', ['recycling', 'cyclic', 'sphere'])) # No matches\r\nprint(is_contains('GaZEL', ['List', 'Snow', 'Gazelist', 'gAzeL'])) # Urban ~ urBAN\r\n\r\nprint(calls)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Черновик.py b/Черновик.py
+--- a/Черновик.py	(revision 4017da1e0adf780e028ae7415065b4017b89bb73)
++++ b/Черновик.py	(date 1732040287355)
+@@ -49,9 +49,9 @@
+             continue
+     return result
+ 
++
+ print(string_info('Kalinka'))
+ print(string_info('Cavaleria'))
+ print(is_contains('cube', ['recycling', 'cyclic', 'sphere'])) # No matches
+ print(is_contains('GaZEL', ['List', 'Snow', 'Gazelist', 'gAzeL'])) # Urban ~ urBAN
+-
+ print(calls)
+\ No newline at end of file

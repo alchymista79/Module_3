@@ -1,0 +1,185 @@
+Index: module_3_1.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>calls = 0\r\ndef count_calls():\r\n    global calls\r\n    calls = calls + 1\r\n\r\ndef string_info(string):\r\n    argument = (len(string), string.upper(), string.lower())\r\n    count_calls()\r\n    return argument\r\n\r\ndef is_contains(string,list_to_search ):\r\n    count_calls()\r\n    string = string.lower()\r\n    for i in range(len(list_to_search)):\r\n        if list_to_search[i].lower() == string:\r\n            output = True\r\n            break\r\n        else:\r\n            output = False\r\n            continue\r\n    return output\r\n\r\n\r\nprint(string_info('колонна'))\r\nprint(string_info('теплообменник'))\r\nprint(string_info('печь'))\r\nprint(is_contains('бЕнЗин', ['неФть', 'дизеЛЬ', 'Бензин']))\r\nprint(is_contains('битум', ['УВГ', 'катализат', 'гудроН', 'гАзОЙль']))\r\nprint(calls)
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/module_3_1.py b/module_3_1.py
+--- a/module_3_1.py	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
++++ b/module_3_1.py	(date 1732040812170)
+@@ -1,29 +1,0 @@
+-calls = 0
+-def count_calls():
+-    global calls
+-    calls = calls + 1
+-
+-def string_info(string):
+-    argument = (len(string), string.upper(), string.lower())
+-    count_calls()
+-    return argument
+-
+-def is_contains(string,list_to_search ):
+-    count_calls()
+-    string = string.lower()
+-    for i in range(len(list_to_search)):
+-        if list_to_search[i].lower() == string:
+-            output = True
+-            break
+-        else:
+-            output = False
+-            continue
+-    return output
+-
+-
+-print(string_info('колонна'))
+-print(string_info('теплообменник'))
+-print(string_info('печь'))
+-print(is_contains('бЕнЗин', ['неФть', 'дизеЛЬ', 'Бензин']))
+-print(is_contains('битум', ['УВГ', 'катализат', 'гудроН', 'гАзОЙль']))
+-print(calls)
+\ No newline at end of file
+Index: .idea/Module_3.iml
+===================================================================
+diff --git a/.idea/Module_3.iml b/.idea/Module_3.iml
+deleted file mode 100644
+--- a/.idea/Module_3.iml	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
++++ /dev/null	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
+@@ -1,10 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="PYTHON_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/.venv" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+deleted file mode 100644
+--- a/.idea/misc.xml	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
++++ /dev/null	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
+@@ -1,7 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="Black">
+-    <option name="sdkName" value="Python 3.12 (Module_3)" />
+-  </component>
+-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.12 (Module_3)" project-jdk-type="Python SDK" />
+-</project>
+\ No newline at end of file
+Index: .idea/.gitignore
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+deleted file mode 100644
+--- a/.idea/.gitignore	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
++++ /dev/null	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
+@@ -1,3 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+Index: .idea/inspectionProfiles/profiles_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/inspectionProfiles/profiles_settings.xml b/.idea/inspectionProfiles/profiles_settings.xml
+deleted file mode 100644
+--- a/.idea/inspectionProfiles/profiles_settings.xml	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
++++ /dev/null	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
+@@ -1,6 +0,0 @@
+-<component name="InspectionProjectProfileManager">
+-  <settings>
+-    <option name="USE_PROJECT_PROFILE" value="false" />
+-    <version value="1.0" />
+-  </settings>
+-</component>
+\ No newline at end of file
+Index: .idea/modules.xml
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+deleted file mode 100644
+--- a/.idea/modules.xml	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
++++ /dev/null	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/Module_3.iml" filepath="$PROJECT_DIR$/.idea/Module_3.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: Черновик.py
+===================================================================
+diff --git a/Черновик.py b/Черновик.py
+deleted file mode 100644
+--- a/Черновик.py	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
++++ /dev/null	(revision 44ace8077350b071256d6786d3e28868ec4a7974)
+@@ -1,57 +0,0 @@
+-# Домашняя работа по уроку "Пространство имён"
+-
+-# Задача "Счётчик вызовов":
+-# Порой необходимо отслеживать, сколько раз вызывалась та или иная функция. К сожалению, в Python не предусмотрен
+-# подсчёт вызовов автоматически.
+-# Давайте реализуем данную фишку самостоятельно!
+-#
+-# Вам необходимо написать 3 функции:
+-# Функция count_calls подсчитывающая вызовы остальных функций.
+-# Функция string_info принимает аргумент - строку и возвращает кортеж из: длины этой строки, строку в верхнем регистре,
+-# строку в нижнем регистре.
+-# Функция is_contains принимает два аргумента: строку и список, и возвращает True, если строка находится в этом списке,
+-# False - если отсутствует. Регистром строки при проверке пренебречь: UrbaN ~ URBAN.
+-# Пункты задачи:
+-# 1. Создать переменную calls = 0 вне функций.
+-# 2. Создать функцию count_calls и изменять в ней значение переменной calls. Эта функция должна вызываться в остальных
+-# двух функциях.
+-# 3. Создать функцию string_info с параметром string и реализовать логику работы по описанию.
+-# 4. Создать функцию is_contains с двумя параметрами string и list_to_search, реализовать логику работы по описанию.
+-# 5. Вызвать соответствующие функции string_info и is_contains произвольное кол-во раз с произвольными данными.
+-# 6. Вывести значение переменной calls на экран(в консоль).
+-
+-# Примечания:
+-# Для использования глобальной переменной внутри функции используйте оператор global.
+-# Для функции is_contains лучше привести и искомую строку и все строки в списке в один регистр.
+-
+-# ~_Р_Е_Ш_Е_Н_И_Е_~
+-calls = 0   # 1
+-def count_calls():  #2
+-    global calls
+-    calls += 1
+-
+-def string_info(string):    #3
+-    stroka = str(string)
+-    result = (len(stroka), stroka.upper(), stroka.lower())
+-    count_calls()
+-    return result
+-
+-def is_contains(string, list_to_search):    # 4
+-    string = str(string).lower()
+-    list_to_search = list(list_to_search)
+-    count_calls()
+-    for i in range(len(list_to_search)):
+-        if str(list_to_search[i]).lower() == string:
+-            result = True
+-            break
+-        else:
+-            result = False
+-            continue
+-    return result
+-
+-print(string_info('Kalinka'))
+-print(string_info('Cavaleria'))
+-print(is_contains('cube', ['recycling', 'cyclic', 'sphere'])) # No matches
+-print(is_contains('GaZEL', ['List', 'Snow', 'Gazelist', 'gAzeL'])) # Urban ~ urBAN
+-
+-print(calls)
+\ No newline at end of file
