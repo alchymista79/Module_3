@@ -1,24 +1,18 @@
-calls = 0
 def count_calls():
     global calls
-    calls += 1
+    calls = calls + 1
 
 def string_info(string):
-    argument = (len(string), string.upper(), string.lower())
     count_calls()
-    return argument
+    return (len(string), string.upper(), string.lower())
 
 def is_contains(string,list_to_search ):
     count_calls()
     string = string.lower()
-    for i in range(len(list_to_search)):
-        if list_to_search[i].lower() == string:
-            output = True
-            break
-        else:
-            output = False
-            continue
-    return output
+    for i in list_to_search:
+        if i.lower() == string:
+            return True
+    return False
 
 
 print(string_info('колонна'))
