@@ -15,6 +15,7 @@ def is_contains(string,list_to_search ):
     return False
 
 
+calls = 0
 print(string_info('колонна'))
 print(string_info('теплообменник'))
 print(string_info('печь'))
